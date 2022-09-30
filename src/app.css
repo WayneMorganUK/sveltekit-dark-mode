@@ -1,0 +1,75 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	.light {	
+		--color-text-base: #120f0f;
+		--color-text-muted: #ffcf91;
+		--color-text-inverted: #ffffff;
+		--color-text-muted-inverted: #521111;
+		--color-text-selected: #f19f36;
+		--color-bg: #c3c1ad;
+		--color-primary: #5c5ca1;
+		--color-secondary: #a8b0b7;
+		--color-tertiary: #557a95;
+		--color-border: #d9d4cf;
+	}
+
+	.dark {
+		--color-text-base: #09d3ac;
+		--color-text-muted: #ffffff;
+		--color-text-inverted: #ececec;
+		--color-text-muted-inverted: #616161;
+		--color-text-selected: #6ec1b4;
+		--color-bg: #000000;
+		--color-primary: #021973;
+		--color-secondary: #0b327d;
+		--color-tertiary: #1c1c1c;
+		--color-border: #1d536d;
+	}
+
+	h1 {
+		@apply text-4xl;
+	}
+	h2 {
+		@apply text-3xl;
+	}
+	h3 {
+		@apply text-2xl;
+	}
+	h4 {
+		@apply text-xl;
+	}
+	h5 {
+		@apply text-lg;
+	}
+	h6 {
+		@apply text-base;
+	}
+	p {
+		@apply text-xs;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-semibold;
+	}
+	body {
+		@apply mx-auto;
+		@apply bg-skin-bg;
+	}
+}
+
+html {
+	overflow-y: scroll;
+}
+
+.root {
+	display: flex;
+	flex-direction: column;
+}
