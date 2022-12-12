@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable } from 'svelte/store'
 
 
 const createWritableStore = (key: string, startValue: any): any => {
@@ -20,4 +20,4 @@ const createWritableStore = (key: string, startValue: any): any => {
     };
 };
 
-export const theme = createWritableStore('theme', { mode: 'dark' })
+export const theme = createWritableStore('theme', { mode: 'light' })

@@ -8,11 +8,26 @@ const config = {
 			textColor: {
 				skin: {
 					base: 'var(--color-text-base)',
+					main: 'var(--color-text-main)',
 					muted: 'var(--color-text-muted)',
 					inverted: 'var(--color-text-inverted)',
 					selected: 'var(--color-text-selected)',
 					mutedinverted: 'var(--color-text-muted-inverted)'
 				}
+			},
+			fill: {
+				base: 'var(--color-fill)',
+				hover: 'var(--color-fill-hover)',
+				header: 'var(--color-text-header)',
+				inverted: 'var(--color-text-inverted)',
+				selected: 'var(--color-text-selected)'
+			},
+			stroke: {
+				base: 'var(--color-stroke)',
+				hover: 'var(--color-stroke-hover)',
+				header: 'var(--color-text-header)',
+				inverted: 'var(--color-text-inverted)',
+				selected: 'var(--color-text-selected)'
 			},
 			backgroundColor: {
 				skin: {
@@ -29,4 +44,3 @@ const config = {
 }
 
 module.exports = config;
-
