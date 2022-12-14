@@ -1,3 +1,7 @@
+<script>
+	console.log(' == +page.svelte = start = ');
+</script>
+
 <div class="wrapper">
 	<h1 class="text-skin-base">Welcome to SvelteKit</h1>
 	<p class="text-skin-muted">

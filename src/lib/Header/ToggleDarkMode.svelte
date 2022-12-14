@@ -1,11 +1,19 @@
 <script>
+	console.log(' == toggle dark mode component');
+
 	import { theme } from '$lib/stores/store';
 	import { toggleTheme } from '$lib/Header/theme';
 	import { page } from '$app/stores';
 	import Sun from '$lib/svgs/Sun.svelte';
 	import Moon from '$lib/svgs//Moon.svelte';
 	import BloodDrop from '../svgs/BloodDrop.svelte';
-	let check = $page.data.theme;
+	let check = $page.data.themex;
+
+	console.log(' == toggle dark mode component = $theme', $theme);
+	console.log(' == toggle dark mode component = $page', $page.data);
+	console.log(' == toggle dark mode component = check', check);
+	console.log(' ==== this is check ====', check);
+
 	function changeTheme() {
 		toggleTheme(theme, $theme);
 		check = $theme.mode;

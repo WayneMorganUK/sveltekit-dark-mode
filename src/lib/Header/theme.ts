@@ -12,9 +12,9 @@ export function toggleTheme(theme: any, $theme: any): void {
 }
 
 function updateDocument(name: string, newMode: string, prevMode: string) {
-    document.cookie = `${name}=`
     document.cookie = `${name}=${newMode};path=/;SameSite=strict;expires=Fri, 31 Dec 2050 23:59:59 GMT`;
     document.documentElement.classList.remove(prevMode);
     document.documentElement.classList.add(newMode);
 }
+
 export { }
