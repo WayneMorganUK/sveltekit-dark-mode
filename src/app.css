@@ -31,6 +31,7 @@
 		--linear-from: rgb(141, 151, 157);
 		--linear-to: rgb(214, 214, 214, 0.47);
 		--box-shadow: #bbb;
+		--iconUrl: url('/sun-24.png');
 	}
 
 	.dark {
@@ -60,6 +61,7 @@
 		--linear-from: rgb(29, 23, 23);
 		--linear-to: rgba(139, 145, 149, 0.84);
 		--box-shadow: rgb(21, 5, 5);
+		--iconUrl: url('/moon-30.png');
 	}
 
 	.blood {
@@ -74,7 +76,7 @@
 		--color-stroke: #a40f0f;
 		--color-fill-hover: #ff310f;
 		--color-stroke-hover: #ff310f;
-		--color-bg: #000;
+		--color-bg: rgb(90, 5, 5);
 		--color-base: #880808;
 		--color-header: #00f;
 		--color-primary: #b91313;
@@ -89,6 +91,7 @@
 		--linear-from: rgb(113, 18, 18);
 		--linear-to: rgba(223, 8, 28, 0.84);
 		--box-shadow: rgb(21, 5, 5);
+		--iconUrl: url('/blood-48.png');
 	}
 
 	@font-face {

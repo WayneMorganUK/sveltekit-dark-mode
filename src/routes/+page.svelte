@@ -1,5 +1,7 @@
 <script>
-	console.log(' == +page.svelte = start = ');
+	// console.log('HITTING +PAGE.SVELTE');
+	// import { page } from '$app/stores';
+	// $: console.log('+PAGE.SVELTE page.data', $page.data);
 </script>
 
 <div class="wrapper">

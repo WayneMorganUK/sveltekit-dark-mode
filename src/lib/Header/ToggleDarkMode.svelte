@@ -1,22 +1,15 @@
 <script>
-	console.log(' == toggle dark mode component');
-
+	// console.log('HITTING TOGGLE Mode');
 	import { theme } from '$lib/stores/store';
+	// $: console.log('TOGGLE, $theme', $theme);
 	import { toggleTheme } from '$lib/Header/theme';
-	import { page } from '$app/stores';
 	import Sun from '$lib/svgs/Sun.svelte';
 	import Moon from '$lib/svgs//Moon.svelte';
-	import BloodDrop from '../svgs/BloodDrop.svelte';
-	let check = $page.data.themex;
-
-	console.log(' == toggle dark mode component = $theme', $theme);
-	console.log(' == toggle dark mode component = $page', $page.data);
-	console.log(' == toggle dark mode component = check', check);
-	console.log(' ==== this is check ====', check);
+	import BloodDrop from '$lib/svgs/BloodDrop.svelte';
+	// $: check = $theme.mode;
 
 	function changeTheme() {
 		toggleTheme(theme, $theme);
-		check = $theme.mode;
 	}
 </script>
 
@@ -26,13 +19,13 @@
 		aria-label="Toggle Theme"
 		on:click={changeTheme}
 	>
-		{#if check === 'light'}
+		{#if $theme.mode === 'light'}
 			<Sun />
 		{/if}
-		{#if check === 'dark'}
+		{#if $theme.mode === 'dark'}
 			<Moon />
 		{/if}
-		{#if check === 'blood'}
+		{#if $theme.mode === 'blood'}
 			<BloodDrop />
 		{/if}
 	</button>

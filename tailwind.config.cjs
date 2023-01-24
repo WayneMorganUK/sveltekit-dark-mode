@@ -38,6 +38,9 @@ const config = {
 					selected: 'var(--color-selected)'
 				}
 			},
+			backgroundImage: {
+					icon: 'var(--iconUrl)'
+			}
 		}
 	},
   plugins: [],

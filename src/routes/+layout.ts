@@ -1,13 +1,20 @@
-import { browser } from "$app/environment";
+import { browser } from '$app/environment';
+import type { LayoutLoad } from './$types';
+import { theme } from '$lib/stores/store';
 
-export const load = async () => {
+export const load = (async ({ data }) => {
+    // console.log('HITTING LAYOUT.TS')
     if (browser) {
-        console.log(
-            ' == layout.ts component doc list',
-            document.documentElement.classList.value
-        );
+        // console.log('LAYOUT.TS BROWSER ONLY CODE')
+        const htmltheme = document.documentElement.className;
+        theme.set({ mode: htmltheme });
+        localStorage.setItem('theme', JSON.stringify({ mode: htmltheme }))
+        // console.log('htmltheme', htmltheme)
         return {
-            themex: document.documentElement.classList.value
+            theme: htmltheme
         }
     }
-}
+    return {
+        theme: data.theme,
+    };
+}) satisfies LayoutLoad;

@@ -1,6 +1,7 @@
 <script>
+	// console.log('HITTING NAVBAR');
+
 	import ToggleDarkMode from '$lib/Header/ToggleDarkMode.svelte';
-	// export let thisTheme;
 </script>
 
 <header class="w-full bg-skin-primary">
