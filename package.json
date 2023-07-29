@@ -1,5 +1,5 @@
 {
-	"name": "sveltekit-dark-mode",
+	"name": "sveltekit-dark-mode-test",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -8,8 +8,8 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
@@ -19,7 +19,9 @@
 		"autoprefixer": "^10.4.14",
 		"eslint": "^8.46.0",
 		"eslint-config-prettier": "^8.9.0",
+		"eslint-plugin-svelte": "^2.32.4",
 		"postcss": "^8.4.27",
+		"postcss-load-config": "^4.0.1",
 		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^3.0.3",
 		"svelte": "^4.1.1",
@@ -29,8 +31,5 @@
 		"typescript": "^5.1.6",
 		"vite": "^4.4.7"
 	},
-	"type": "module",
-	"dependencies": {
-		"eslint-plugin-svelte": "^2.32.4"
-	}
+	"type": "module"
 }

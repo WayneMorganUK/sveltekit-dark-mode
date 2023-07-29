@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.css';
+	import '../app.postcss';
 	import Navbar from '$lib/Header/Navbar.svelte';
 	import { page } from '$app/stores';
 	// console.log('HITTING LAYOUT, page.data', $page.data);
@@ -38,6 +38,7 @@
 </script>
 
 <svelte:head>
+	<!-- <title>{$page.data.theme}</title> -->
 	<!-- <title>{$page.data.theme}</title> -->
 	<script lang="ts">
 		// console.log('page', $page);

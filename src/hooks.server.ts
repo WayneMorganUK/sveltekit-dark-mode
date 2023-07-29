@@ -1,7 +1,6 @@
 import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
-    // console.log("HITTING HOOKS")
     let theme = event.cookies.get('theme');
 
     if (!theme) {
