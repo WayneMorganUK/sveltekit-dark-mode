@@ -1,54 +1,37 @@
 <script lang="ts">
+	console.log('HITTING +layout.svelte');
 	import '../app.postcss';
 	import Navbar from '$lib/Header/Navbar.svelte';
 	import { page } from '$app/stores';
-	// console.log('HITTING LAYOUT, page.data', $page.data);
 	import { onMount } from 'svelte';
-	// console.log('LAYOUT, importing $theme store');
 	import { theme } from '$lib/stores/store';
-	// console.log('+layout.svelte, $theme', $theme);
-	// console.log('LAYOUT setting theme store to page.data.theme');
-	// $:console.log('+layout.svelte, $theme{reactive)', $theme);
 
 	if ($page.data.theme !== 'unset') {
 		$theme.mode = $page.data.theme;
 	}
+
 	onMount(() => {
-		// console.log('HITTING +LAYOUTE SVELTE, ONMOUNT');
-		// We load theme in the <script> tag in layout.ts load, but then also here onMount to setup stores
 		if (!('theme' in localStorage)) {
 			theme.useLocalStorage();
 			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				// localTheme = 'dark';
-				// console.log('setting theme store to dark');
 				theme.set({ ...$theme, mode: 'dark' });
 				localStorage.setItem('theme', JSON.stringify({ mode: 'dark' }));
 			} else {
-				// localTheme = 'light';
 				theme.set({ ...$theme, mode: 'light' });
-				// console.log('setting theme store to light');
-
 				localStorage.setItem('theme', JSON.stringify({ mode: 'light' }));
 			}
 		} else {
-			// console.log('setting theme store to use local storage');
 			theme.useLocalStorage();
 		}
 	});
 </script>
 
 <svelte:head>
-	<!-- <title>{$page.data.theme}</title> -->
-	<!-- <title>{$page.data.theme}</title> -->
 	<script lang="ts">
-		// console.log('page', $page);
-		// console.log('theme', $theme);
-		// console.log('HITTING HEAD');
-
 		if (!('theme' in localStorage)) {
 			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.classList.remove('light');
-				document.documentElement.classList.add('dark');
+				document.documentElement.setAttribute('data-theme', 'dark');
+				localStorage.setItem('theme', JSON.stringify({ mode: 'dark' }));
 				document.cookie =
 					'theme=dark;path=/;SameSite=strict;expires=Wed, 29 Dec 9999 23:59:59 GMT;';
 			} else {
@@ -58,8 +41,7 @@
 		} else {
 			if (localStorage.getItem('theme')) {
 				let currentMode = JSON.parse(localStorage.getItem('theme'));
-				document.documentElement.classList.remove('light');
-				document.documentElement.classList.add(currentMode.mode);
+				document.documentElement.setAttribute('data-theme', currentMode.mode);
 			}
 		}
 	</script>

@@ -2,15 +2,12 @@
 // for information about these interfaces
 // and what to do when importing types
 
-declare global {
-	namespace App {
-		// interface Error {}
-		interface Locals {
-			theme: {
-				mode: string | null
-			}
+declare namespace App {
+	interface Locals {
+		theme: {
+			mode: string | null
 		}
-		// interface PageData {}
-		// interface Platform {}
 	}
+	// interface PageData {}
+	// interface Platform {}
 }

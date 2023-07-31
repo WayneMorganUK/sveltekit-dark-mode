@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 @layer base {
-	.light {
+	html[data-theme='light'] {
 		--color-text-base: #379696;
 		--color-text-header: #0f0;
 		--color-text-secondary: #000;
@@ -34,7 +34,7 @@
 		--iconUrl: url('/sun-24.png');
 	}
 
-	.dark {
+	html[data-theme='dark'] {
 		--color-text-base: #08e3bd;
 		--color-text-secondary: #fff;
 		--color-text-muted: #ffffff;
@@ -64,7 +64,7 @@
 		--iconUrl: url('/moon-30.png');
 	}
 
-	.blood {
+	html[data-theme='blood'] {
 		--color-text-base: #d6d3e2;
 		--color-text-secondary: #fff;
 		--color-text-muted: #ffffff;

@@ -1,12 +1,9 @@
 <script>
-	// console.log('HITTING TOGGLE Mode');
 	import { theme } from '$lib/stores/store';
-	// $: console.log('TOGGLE, $theme', $theme);
 	import { toggleTheme } from '$lib/Header/theme';
 	import Sun from '$lib/svgs/Sun.svelte';
 	import Moon from '$lib/svgs//Moon.svelte';
 	import BloodDrop from '$lib/svgs/BloodDrop.svelte';
-	// $: check = $theme.mode;
 
 	function changeTheme() {
 		toggleTheme(theme, $theme);

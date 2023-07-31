@@ -11,20 +11,19 @@ export function toggleTheme(theme:
     $theme: { mode: string }): void {
     if ($theme.mode === 'light') {
         theme.set({ ...$theme, mode: 'dark' });
-        updateDocument('theme', 'dark', 'light');
+        updateDocument('theme', 'dark');
     } else if ($theme.mode === 'dark') {
         theme.set({ ...$theme, mode: 'blood' });
-        updateDocument('theme', 'blood', 'dark');
+        updateDocument('theme', 'blood')
     } else {
         theme.set({ ...$theme, mode: 'light' });
-        updateDocument('theme', 'light', 'blood');
+        updateDocument('theme', 'light');
     }
 }
 
-function updateDocument(name: string, newMode: string, prevMode: string) {
+function updateDocument(name: string, newMode: string) {
     document.cookie = `${name}=${newMode};path=/;SameSite=strict;expires=Mon, 27 Dec 2050 23:59:59 GMT`;
-    document.documentElement.classList.remove(prevMode);
-    document.documentElement.classList.add(newMode);
+    document.documentElement.setAttribute('data-theme', newMode);
 }
 
 export { }

@@ -2,7 +2,6 @@ import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
     let theme = event.cookies.get('theme');
-
     if (!theme) {
         theme = 'unset'
         event.cookies.set('theme', 'unset', {
