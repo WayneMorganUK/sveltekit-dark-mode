@@ -1,5 +1,4 @@
 <script lang="ts">
-	console.log('HITTING +layout.svelte');
 	import '../app.postcss';
 	import Navbar from '$lib/Header/Navbar.svelte';
 	import { page } from '$app/stores';

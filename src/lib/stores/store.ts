@@ -1,11 +1,6 @@
-import { browser } from '$app/environment';
 import { writable } from 'svelte/store'
 
 const createWritableStore = (key: string, startValue: { mode: string }) => {
-    if (browser) {
-        console.log('STORES LOCALSTORGAE', localStorage)
-
-    }
     const { subscribe, set } = writable(startValue);
 
     return {
