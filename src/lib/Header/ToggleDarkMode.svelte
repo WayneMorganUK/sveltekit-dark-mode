@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	import { theme } from '$lib/stores/store';
 	import { toggleTheme } from '$lib/Header/theme';
-	import Sun from '$lib/svgs/Sun.svelte';
-	import Moon from '$lib/svgs//Moon.svelte';
-	import BloodDrop from '$lib/svgs/BloodDrop.svelte';
+	import { icons } from '$lib/Icons/Icons';
+
+	let current_theme: ThemeType = $theme.mode;
 
 	function changeTheme() {
 		toggleTheme(theme, $theme);
+		current_theme = $theme.mode;
 	}
 </script>
 
@@ -16,14 +17,6 @@
 		aria-label="Toggle Theme"
 		on:click={changeTheme}
 	>
-		{#if $theme.mode === 'light'}
-			<Sun />
-		{/if}
-		{#if $theme.mode === 'dark'}
-			<Moon />
-		{/if}
-		{#if $theme.mode === 'blood'}
-			<BloodDrop />
-		{/if}
+		<svelte:component this={icons[current_theme]} />
 	</button>
 </div>

@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-const createWritableStore = (key: string, startValue: { mode: string }) => {
+const createWritableStore = (key: string, startValue: { mode: ThemeType }) => {
     const { subscribe, set } = writable(startValue);
 
     return {
@@ -19,4 +19,4 @@ const createWritableStore = (key: string, startValue: { mode: string }) => {
     };
 };
 
-export const theme = createWritableStore('theme', { mode: 'unset' })
+export const theme = createWritableStore('theme', { mode: 'light' })

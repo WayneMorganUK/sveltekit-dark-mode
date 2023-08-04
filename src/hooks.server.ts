@@ -3,8 +3,8 @@ import type { Handle } from '@sveltejs/kit'
 export const handle: Handle = async ({ event, resolve }) => {
     let theme = event.cookies.get('theme');
     if (!theme) {
-        theme = 'unset'
-        event.cookies.set('theme', 'unset', {
+        theme = 'light'
+        event.cookies.set('theme', 'light', {
             sameSite: 'strict',
             path: '/',
             expires: new Date('Tue, 28 Dec 9999 23:59:59 GMT'),
