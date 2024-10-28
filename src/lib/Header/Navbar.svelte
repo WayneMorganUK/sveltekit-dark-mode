@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import ToggleDarkMode from '$lib/Header/ToggleDarkMode.svelte';
 </script>
 

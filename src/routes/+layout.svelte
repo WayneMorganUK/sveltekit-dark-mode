@@ -4,6 +4,11 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { theme } from '$lib/stores/store';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	if ($page.data.theme !== 'unset') {
 		$theme.mode = $page.data.theme;
@@ -48,9 +53,9 @@
 </svelte:head>
 
 <main>
-	<div class="fixed top-0 w-full min-h-screen -z-10 bg-skin-bg" />
+	<div class="fixed top-0 w-full min-h-screen -z-10 bg-skin-bg"></div>
 	<Navbar />
 	<section class="mx-auto mt-12 md:mt-[56px] max-w-7xl">
-		<slot />
+		{@render children?.()}
 	</section>
 </main>
